@@ -2,6 +2,7 @@ backend:
   name: github
   repo: AlperIsmailoglou/portfolio # REPLACE THIS with your actual GitHub username
   branch: main
+  auth_methods: [token]
 
 # Where the CMS should save your uploaded photos
 media_folder: "assets/uploads"
