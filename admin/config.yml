@@ -1,0 +1,21 @@
+backend:
+  name: github
+  repo: AlperIsmailoglou/portfolio # REPLACE THIS with your actual GitHub username
+  branch: main
+
+# Where the CMS should save your uploaded photos
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+# The layout of your CMS Dashboard
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Project Title", name: "title", widget: "string"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Full Details (Optional)", name: "body", widget: "markdown", required: false}

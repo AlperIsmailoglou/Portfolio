@@ -1,2 +1,6 @@
 name: My Professional Portfolio
-# We will use this file later to tell Jekyll where our custom projects live
+
+# This tells Jekyll to treat the _projects folder as our database
+collections:
+  projects:
+    output: true
