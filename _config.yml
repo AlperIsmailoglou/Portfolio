@@ -1,10 +1,10 @@
 name: My Professional Portfolio
 
-# This tells Jekyll to treat the _projects folder as our database
 collections:
   projects:
     output: true
-    defaults:
+
+defaults:
   - scope:
       path: ""
       type: "projects"
