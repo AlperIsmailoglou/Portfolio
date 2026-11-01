@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <!-- Google Fonts import for easy font customization -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <header class="hero">
@@ -18,27 +20,24 @@
     <main>
         <!-- This grid is what the CMS will eventually fill automatically -->
         <section class="project-grid">
-            
-            <!-- Dummy Project 1 -->
+            {% for project in site.projects %}
             <article class="project-card fade-in">
+                <!-- Automatically fetch the image if uploaded, otherwise use a blank placeholder -->
+                {% if project.image %}
+                <div class="project-image"
+                    style="background-image: url('{{ site.baseurl }}{{ project.image }}'); background-size: cover; background-position: center;">
+                </div>
+                {% else %}
                 <div class="project-image"></div>
+                {% endif %}
+
                 <div class="project-info">
-                    <h2>Academic Project Name</h2>
-                    <p>A brief description of the tools used and the problem solved.</p>
-                    <a href="#" class="btn">View Details</a>
+                    <h2>{{ project.title }}</h2>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ site.baseurl }}{{ project.url }}" class="btn">View Details</a>
                 </div>
             </article>
-
-            <!-- Dummy Project 2 -->
-            <article class="project-card fade-in">
-                <div class="project-image"></div>
-                <div class="project-info">
-                    <h2>Personal Project Name</h2>
-                    <p>A brief description of this specific project's goals.</p>
-                    <a href="#" class="btn">View Details</a>
-                </div>
-            </article>
-
+            {% endfor %}
         </section>
     </main>
 
@@ -48,4 +47,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

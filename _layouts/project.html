@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Portfolio</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+</head>
+<body>
+    <main style="max-width: 800px; margin: 5rem auto; padding: 2rem;">
+        <a href="{{ site.baseurl }}/" class="btn" style="margin-bottom: 2rem;">&larr; Back to Portfolio</a>
+        
+        {% if page.image %}
+        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" style="width: 100%; border-radius: 8px; margin-bottom: 2rem;">
+        {% endif %}
+        
+        <h1 style="margin-bottom: 1rem;">{{ page.title }}</h1>
+        
+        <div class="project-content">
+            <!-- This tag injects whatever you type in the main body area of the CMS -->
+            {{ content }}
+        </div>
+    </main>
+</body>
+</html>
