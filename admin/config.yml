@@ -1,14 +1,12 @@
 backend:
   name: github
-  repo: AlperIsmailoglou/Portfolio # REPLACE THIS with your actual GitHub username
+  repo: AlperIsmailoglou/Portfolio
   branch: main
   auth_methods: [token]
 
-# Where the CMS should save your uploaded photos
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-# The layout of your CMS Dashboard
 collections:
   - name: "projects"
     label: "Projects"
