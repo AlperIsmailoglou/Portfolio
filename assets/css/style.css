@@ -1,95 +1,164 @@
-/* --- CUSTOMIZATION VARIABLES --- */
 :root {
-    --bg-color: #f4f4f5;         /* The main background color */
-    --text-color: #18181b;       /* The main text color */
-    --primary-color: #2563eb;    /* The accent color (buttons, links) */
-    --card-bg: #ffffff;          /* Project card background */
+    --bg-color: #f8fafc;
+    --text-color: #0f172a;
+    --primary-color: #000000;
     --font-main: 'Inter', sans-serif;
 }
 
-/* --- BASE STYLES --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-main);
     line-height: 1.6;
-    padding: 2rem;
+}
+
+/* --- LAYOUT UTILITIES --- */
+.section-padding {
+    padding: 5rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
+.section-title { font-size: 2rem; margin-bottom: 2rem; font-weight: 300; }
+.minimal-text { font-size: 1.25rem; max-width: 800px; color: #475569; font-weight: 300; }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin: 5rem 0;
+    background-color: #e2e8f0; /* Optional: replace with background-image */
+    padding: 2rem;
 }
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 0.5rem; }
+.hero p { font-size: 1.25rem; color: #475569; margin-bottom: 2rem; }
+.hero-nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
 }
+.hero-nav a:hover { text-decoration: underline; }
 
-/* --- PROJECT GRID (Placing/Space) --- */
+/* --- CARDS --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 1.5rem;
 }
-
-/* --- PROJECT CARDS (Hover Effects) --- */
 .project-card {
-    background-color: var(--card-bg);
+    position: relative;
+    height: 350px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+.project-card:hover { transform: translateY(-5px); }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+.card-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
 }
+.project-card:hover .card-bg { transform: scale(1.05); }
 
-.project-image {
-    background-color: #e4e4e7; /* Placeholder for actual images */
-    height: 200px;
-    width: 100%;
-}
-
-.project-info {
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    /* Gradient ensures text is readable */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 40%);
     padding: 1.5rem;
 }
+.card-title { color: white; font-size: 1.5rem; font-weight: 400; }
 
+/* --- CTA & FOOTER --- */
+.cta-section { text-align: center; }
+.cta-section h2 { margin-bottom: 2rem; font-weight: 300; font-size: 2.5rem; }
 .btn {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 2rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 4px;
     transition: opacity 0.2s;
 }
+.btn:hover { opacity: 0.8; }
+footer { text-align: center; padding: 2rem; border-top: 1px solid #e2e8f0; }
+footer a { color: var(--text-color); }
 
-.btn:hover {
-    opacity: 0.8;
-}
-
-/* --- ANIMATIONS (Effects while browsing) --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
+/* --- MODAL (50/50 Split) --- */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
-    transform: translateY(0);
+    transition: opacity 0.3s ease;
 }
+.modal-backdrop.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.modal-content {
+    background: white;
+    width: 900px;
+    max-width: 95%;
+    height: 500px;
+    border-radius: 12px;
+    display: flex;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 10;
+    color: var(--text-color);
+}
+.modal-left {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-color: #e2e8f0;
+}
+.modal-right {
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal-right h2 { font-size: 2rem; margin-bottom: 1rem; }
+.modal-right p { color: #475569; margin-bottom: 2rem; }
+
+/* Mobile fallback for modal */
+@media (max-width: 768px) {
+    .modal-content { flex-direction: column; height: auto; max-height: 90vh; }
+    .modal-left { width: 100%; height: 250px; }
+    .modal-right { width: 100%; padding: 2rem; }
+}
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }

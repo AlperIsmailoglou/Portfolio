@@ -2,52 +2,86 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Professional Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Google Fonts import for easy font customization -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
+    <!-- HERO SECTION -->
     <header class="hero">
-        <h1>Hello, I'm [Your Name].</h1>
-        <p>I build solutions. Here are my academic and personal projects.</p>
+        <div class="hero-content">
+            <h1>Hello, I'm [Your Name].</h1>
+            <p>I build elegant, functional solutions.</p>
+            <nav class="hero-nav">
+                <a href="{{ site.baseurl }}/">Home Page</a>
+                <a href="#work">Work</a>
+                <a href="#about">About Me</a>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <!-- This grid is what the CMS will eventually fill automatically -->
-        <section class="project-grid">
-            {% for project in site.projects %}
-            <article class="project-card fade-in">
-                <!-- Automatically fetch the image if uploaded, otherwise use a blank placeholder -->
-                {% if project.image %}
-                <div class="project-image"
-                    style="background-image: url('{{ site.baseurl }}{{ project.image }}'); background-size: cover; background-position: center;">
-                </div>
-                {% else %}
-                <div class="project-image"></div>
-                {% endif %}
+        <!-- WHY WORK WITH ME -->
+        <section id="about" class="section-padding">
+            <h2 class="section-title">Why work with me</h2>
+            <p class="minimal-text">I combine academic rigor with practical experience to deliver high-quality, scalable results. Every project is an opportunity to solve complex problems with clean, maintainable solutions.</p>
+        </section>
 
-                <div class="project-info">
-                    <h2>{{ project.title }}</h2>
-                    <p>{{ project.description }}</p>
-                    <a href="{{ site.baseurl }}{{ project.url }}" class="btn">View Details</a>
-                </div>
-            </article>
-            {% endfor %}
+        <!-- WORK / PROJECTS -->
+        <section id="work" class="section-padding">
+            <h2 class="section-title">Latest Work</h2>
+            <div class="project-grid">
+                {% for project in site.projects %}
+                <!-- We store the project data in 'data-' attributes so JS can read it for the modal -->
+                <article class="project-card fade-in" 
+                         data-title="{{ project.title }}" 
+                         data-desc="{{ project.description }}" 
+                         data-img="{% if project.image %}{{ site.baseurl }}{{ project.image }}{% endif %}" 
+                         data-url="{{ site.baseurl }}{{ project.url }}">
+                    
+                    {% if project.image %}
+                    <div class="card-bg" style="background-image: url('{{ site.baseurl }}{{ project.image }}');"></div>
+                    {% else %}
+                    <div class="card-bg" style="background-color: #e2e8f0;"></div>
+                    {% endif %}
+                    
+                    <!-- Gradient overlay ensures white text is always readable -->
+                    <div class="card-overlay">
+                        <h3 class="card-title">{{ project.title }}</h3>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section class="cta-section section-padding">
+            <h2>Ready to collaborate?</h2>
+            <a href="mailto:your@email.com" class="btn">Get in Contact</a>
         </section>
     </main>
 
     <footer>
-        <p><a href="mailto:your@email.com">Contact Me</a> | <a href="link-to-cv.pdf">Download CV</a></p>
+        <p>&copy; 2026 [Your Name]. <a href="{{ site.baseurl }}/assets/docs/CV.pdf" target="_blank">Download CV</a></p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
-</body>
+    <!-- HIDDEN PREVIEW MODAL -->
+    <div id="project-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <button id="close-modal" class="close-btn">&times;</button>
+            <div class="modal-left" id="modal-img"></div>
+            <div class="modal-right">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <a href="#" id="modal-link" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
 
+    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+</body>
 </html>
