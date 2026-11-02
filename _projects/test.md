@@ -1,6 +1,6 @@
 ---
 title: Test
-image: ''
+image: /assets/uploads/ic_app.png
 description: |-
   Test 
   121
