@@ -1,10 +1,14 @@
 ---
 title: Test
-image: /assets/uploads/ic_app.png
+category: Academic
+gallery:
+  - /assets/uploads/ic_app.png
+  - /assets/uploads/wicut_1.jpg
 description: |-
   Test 
   121
   TEST ASASSA
+image: /assets/uploads/ic_app.png
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia elit nunc. Nulla at odio at turpis vestibulum pulvinar et quis lacus. Suspendisse id dolor ac tellus faucibus ullamcorper. Phasellus eu sagittis nisl, quis tincidunt sem. Phasellus faucibus, nisi ut ullamcorper dictum, ex nisi tristique magna, vitae elementum nisi ante at eros. Aliquam bibendum auctor nibh vitae tempor. Nullam a varius lorem.
