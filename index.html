@@ -40,17 +40,17 @@
             <h2 class="section-title">Latest Work</h2>
             <div class="project-grid">
                 {% for project in site.projects %}
-                <!-- Extract all gallery images into a comma-separated list -->
-                {% assign gallery_imgs = project.gallery | map: "image" | join: "," %}
+                <!-- CORRECTED: Join the flat array directly -->
+                {% assign gallery_imgs = project.gallery | join: "," %}
 
                 <article class="project-card fade-in image-skeleton" data-title="{{ project.title }}"
                     data-desc="{{ project.description }}" data-gallery="{{ gallery_imgs }}"
                     data-url="{{ site.baseurl }}{{ project.url }}">
 
-                    <!-- Show the first image as the cover -->
+                    <!-- CORRECTED: Call the string directly without .image -->
                     {% if project.gallery.size > 0 %}
-                    <div class="card-bg"
-                        style="background-image: url('{{ site.baseurl }}{{ project.gallery[0].image }}');"></div>
+                    <div class="card-bg" style="background-image: url('{{ site.baseurl }}{{ project.gallery[0] }}');">
+                    </div>
                     {% else %}
                     <div class="card-bg" style="background-color: #e2e8f0;"></div>
                     {% endif %}
