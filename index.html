@@ -2,6 +2,7 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- HERO SECTION -->
@@ -28,7 +30,9 @@
         <!-- WHY WORK WITH ME -->
         <section id="about" class="section-padding">
             <h2 class="section-title">Why work with me</h2>
-            <p class="minimal-text">I combine academic rigor with practical experience to deliver high-quality, scalable results. Every project is an opportunity to solve complex problems with clean, maintainable solutions.</p>
+            <p class="minimal-text">I combine academic rigor with practical experience to deliver high-quality, scalable
+                results. Every project is an opportunity to solve complex problems with clean, maintainable solutions.
+            </p>
         </section>
 
         <!-- WORK / PROJECTS -->
@@ -36,25 +40,53 @@
             <h2 class="section-title">Latest Work</h2>
             <div class="project-grid">
                 {% for project in site.projects %}
-                <!-- We store the project data in 'data-' attributes so JS can read it for the modal -->
-                <article class="project-card fade-in" 
-                         data-title="{{ project.title }}" 
-                         data-desc="{{ project.description }}" 
-                         data-img="{% if project.image %}{{ site.baseurl }}{{ project.image }}{% endif %}" 
-                         data-url="{{ site.baseurl }}{{ project.url }}">
-                    
-                    {% if project.image %}
-                    <div class="card-bg" style="background-image: url('{{ site.baseurl }}{{ project.image }}');"></div>
+                <!-- Extract all gallery images into a comma-separated list -->
+                {% assign gallery_imgs = project.gallery | map: "image" | join: "," %}
+
+                <article class="project-card fade-in image-skeleton" data-title="{{ project.title }}"
+                    data-desc="{{ project.description }}" data-gallery="{{ gallery_imgs }}"
+                    data-url="{{ site.baseurl }}{{ project.url }}">
+
+                    <!-- Show the first image as the cover -->
+                    {% if project.gallery.size > 0 %}
+                    <div class="card-bg"
+                        style="background-image: url('{{ site.baseurl }}{{ project.gallery[0].image }}');"></div>
                     {% else %}
                     <div class="card-bg" style="background-color: #e2e8f0;"></div>
                     {% endif %}
-                    
-                    <!-- Gradient overlay ensures white text is always readable -->
+
                     <div class="card-overlay">
                         <h3 class="card-title">{{ project.title }}</h3>
                     </div>
                 </article>
                 {% endfor %}
+            </div>
+
+            <div id="project-modal" class="modal-backdrop hidden">
+                <div class="modal-content">
+                    <button id="close-modal" class="close-btn">&times;</button>
+                    <div class="modal-left" id="modal-img"></div>
+                    <div class="modal-right">
+                        <h2 id="modal-title"></h2>
+                        <p id="modal-desc"></p>
+                        <a href="#" id="modal-link" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div id="project-modal" class="modal-backdrop hidden">
+                <div class="modal-content">
+                    <button id="close-modal" class="close-btn">&times;</button>
+                    <div class="modal-left" id="modal-img-container">
+                        <button class="slider-btn prev-btn" id="modal-prev">&#10094;</button>
+                        <!-- Images will be injected here by JS -->
+                        <button class="slider-btn next-btn" id="modal-next">&#10095;</button>
+                    </div>
+                    <div class="modal-right">
+                        <h2 id="modal-title"></h2>
+                        <p id="modal-desc"></p>
+                        <a href="#" id="modal-link" class="btn">View Details</a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -69,19 +101,10 @@
         <p>&copy; 2026 [Your Name]. <a href="{{ site.baseurl }}/assets/docs/CV.pdf" target="_blank">Download CV</a></p>
     </footer>
 
-    <!-- HIDDEN PREVIEW MODAL -->
-    <div id="project-modal" class="modal-backdrop hidden">
-        <div class="modal-content">
-            <button id="close-modal" class="close-btn">&times;</button>
-            <div class="modal-left" id="modal-img"></div>
-            <div class="modal-right">
-                <h2 id="modal-title"></h2>
-                <p id="modal-desc"></p>
-                <a href="#" id="modal-link" class="btn">View Details</a>
-            </div>
-        </div>
-    </div>
+
+
 
     <script src="{{ site.baseurl }}/assets/js/script.js"></script>
 </body>
+
 </html>

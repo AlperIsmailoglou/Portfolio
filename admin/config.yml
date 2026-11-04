@@ -15,6 +15,10 @@ collections:
     slug: "{{slug}}"
     fields:
       - {label: "Project Title", name: "title", widget: "string"}
-      - {label: "Cover Image", name: "image", widget: "image", required: false}
+      - {label: "Category", name: "category", widget: "select", options: ["Academic", "Personal"]}
+      - label: "Project Gallery"
+        name: "gallery"
+        widget: "list"
+        field: {label: "Image", name: "image", widget: "image"}
       - {label: "Short Description", name: "description", widget: "text"}
       - {label: "Full Details (Optional)", name: "body", widget: "markdown", required: false}
