@@ -1,3 +1,5 @@
+const baseUrl = window.location.pathname.includes('/Portfolio') ? '/Portfolio' : '';
+
 // --- SCROLL ANIMATIONS ---
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
@@ -7,11 +9,7 @@ const observer = new IntersectionObserver((entries, obs) => {
         }
     });
 }, { threshold: 0.1 });
-
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-// --- BASE URL SETUP ---
-const baseUrl = window.location.pathname.includes('/Portfolio') ? '/Portfolio' : '';
 
 // --- HOMEPAGE MODAL CAROUSEL ---
 const modal = document.getElementById('project-modal');
@@ -20,12 +18,12 @@ if (modal) {
     const desc = document.getElementById('modal-desc');
     const link = document.getElementById('modal-link');
     const imgContainer = document.getElementById('modal-img-container');
+    const nextBtn = document.getElementById('modal-next');
     let slideInterval;
     let currentSlide = 0;
     let slides = [];
 
     function setupSlides(galleryString) {
-        // Remove only old slides, keep the buttons intact
         imgContainer.querySelectorAll('.modal-slide').forEach(el => el.remove());
         if (!galleryString) return;
 
@@ -33,13 +31,10 @@ if (modal) {
         images.forEach((img, index) => {
             const div = document.createElement('div');
             div.className = `modal-slide ${index === 0 ? 'active' : ''}`;
-
-            // Format the image path properly
             const finalImgSrc = img.startsWith('http') || img.startsWith('/') ? img : `${baseUrl}/${img}`;
             div.style.backgroundImage = `url('${finalImgSrc}')`;
-
-            // Insert the image behind the next/prev buttons so arrows stay on top
-            imgContainer.insertBefore(div, document.getElementById('modal-next'));
+            // Insert behind the buttons
+            imgContainer.insertBefore(div, nextBtn);
         });
         slides = imgContainer.querySelectorAll('.modal-slide');
     }
@@ -112,7 +107,6 @@ if (detailBox) {
         imgs[currentIndex].classList.add('active');
     });
 
-    // Lightbox Logic
     const lightbox = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
 

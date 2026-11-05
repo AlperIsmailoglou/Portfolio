@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | Portfolio</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%s' }}">
 </head>
 
 <body>
-    <main class="section-padding" style="max-width: 900px;">
+    <main class="section-padding" style="max-width: 900px; margin: 0 auto;">
         <a href="{{ site.baseurl }}/#work" class="btn" style="margin-bottom: 2rem;">&larr; Back to Portfolio</a>
 
         <h1 style="margin-bottom: 1rem; font-size: 2.5rem;">{{ page.title }}</h1>
@@ -17,16 +17,13 @@
             style="display: inline-block; background: #e2e8f0; padding: 0.25rem 0.75rem; border-radius: 4px; margin-bottom: 2rem;">{{
             page.category }}</span>
 
-        <!-- DETAIL PAGE GALLERY -->
-        {% if page.gallery.size > 0 %}
-        <!-- DETAIL PAGE GALLERY -->
         {% if page.gallery.size > 0 %}
         <div class="detail-gallery-box image-skeleton">
             <button class="slider-btn prev-btn detail-prev">&lt;</button>
             <div class="detail-images-wrapper">
                 {% for img_path in page.gallery %}
                 <img src="{{ site.baseurl }}{{ img_path }}" class="detail-img {% if forloop.first %}active{% endif %}"
-                    alt="Project screenshot">
+                    alt="Project image">
                 {% endfor %}
             </div>
             <button class="slider-btn next-btn detail-next">&gt;</button>
@@ -38,14 +35,13 @@
         </div>
     </main>
 
-    <!-- FULLSCREEN LIGHTBOX MODAL -->
     <div id="lightbox-modal" class="modal-backdrop hidden" style="z-index: 2000;">
         <button id="close-lightbox" class="close-btn" style="color: white;">&times;</button>
         <img id="lightbox-img" src="" alt="Fullscreen view"
             style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
     </div>
 
-    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/script.js?v={{ 'now' | date: '%s' }}"></script>
 </body>
 
 </html>
