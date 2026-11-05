@@ -19,16 +19,17 @@
 
         <!-- DETAIL PAGE GALLERY -->
         {% if page.gallery.size > 0 %}
+        <!-- DETAIL PAGE GALLERY -->
+        {% if page.gallery.size > 0 %}
         <div class="detail-gallery-box image-skeleton">
-            <button class="slider-btn prev-btn detail-prev">&#10094;</button>
+            <button class="slider-btn prev-btn detail-prev">&lt;</button>
             <div class="detail-images-wrapper">
-                <!-- CORRECTED: Loop through the strings -->
                 {% for img_path in page.gallery %}
                 <img src="{{ site.baseurl }}{{ img_path }}" class="detail-img {% if forloop.first %}active{% endif %}"
                     alt="Project screenshot">
                 {% endfor %}
             </div>
-            <button class="slider-btn next-btn detail-next">&#10095;</button>
+            <button class="slider-btn next-btn detail-next">&gt;</button>
         </div>
         {% endif %}
 

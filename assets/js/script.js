@@ -25,15 +25,21 @@ if (modal) {
     let slides = [];
 
     function setupSlides(galleryString) {
+        // Remove only old slides, keep the buttons intact
         imgContainer.querySelectorAll('.modal-slide').forEach(el => el.remove());
         if (!galleryString) return;
-        
+
         const images = galleryString.split(',').filter(i => i.trim() !== '');
         images.forEach((img, index) => {
             const div = document.createElement('div');
             div.className = `modal-slide ${index === 0 ? 'active' : ''}`;
-            div.style.backgroundImage = `url('${baseUrl}${img}')`;
-            imgContainer.appendChild(div);
+
+            // Format the image path properly
+            const finalImgSrc = img.startsWith('http') || img.startsWith('/') ? img : `${baseUrl}/${img}`;
+            div.style.backgroundImage = `url('${finalImgSrc}')`;
+
+            // Insert the image behind the next/prev buttons so arrows stay on top
+            imgContainer.insertBefore(div, document.getElementById('modal-next'));
         });
         slides = imgContainer.querySelectorAll('.modal-slide');
     }
@@ -53,13 +59,13 @@ if (modal) {
             title.textContent = card.getAttribute('data-title');
             desc.textContent = card.getAttribute('data-desc');
             link.href = card.getAttribute('data-url');
-            
+
             setupSlides(card.getAttribute('data-gallery'));
             currentSlide = 0;
-            
+
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
-            
+
             if (slides.length > 1) {
                 slideInterval = setInterval(nextSlide, 5000);
             }
@@ -69,13 +75,13 @@ if (modal) {
     document.getElementById('modal-next').addEventListener('click', () => {
         clearInterval(slideInterval);
         nextSlide();
-        if(slides.length > 1) slideInterval = setInterval(nextSlide, 5000);
+        if (slides.length > 1) slideInterval = setInterval(nextSlide, 5000);
     });
 
     document.getElementById('modal-prev').addEventListener('click', () => {
         clearInterval(slideInterval);
         prevSlide();
-        if(slides.length > 1) slideInterval = setInterval(nextSlide, 5000);
+        if (slides.length > 1) slideInterval = setInterval(nextSlide, 5000);
     });
 
     function closeModal() {
