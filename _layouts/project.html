@@ -35,11 +35,18 @@
         </div>
     </main>
 
-    <div id="lightbox-modal" class="modal-backdrop hidden" style="z-index: 2000;">
-        <button id="close-lightbox" class="close-btn" style="color: white;">&times;</button>
-        <img id="lightbox-img" src="" alt="Fullscreen view"
-            style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
-    </div>
+    <!-- FULLSCREEN LIGHTBOX MODAL -->
+<div id="lightbox-modal" class="modal-backdrop hidden" style="z-index: 2000;">
+    <button id="close-lightbox" class="close-btn" style="color: white;">&times;</button>
+    
+    <!-- NEW: Lightbox Navigation Arrows -->
+    <button class="slider-btn prev-btn" id="lightbox-prev">&lt;</button>
+    
+    <img id="lightbox-img" src="" alt="Fullscreen view" style="max-width: 90vw; max-height: 90vh; object-fit: contain;">
+    
+    <!-- NEW: Lightbox Navigation Arrows -->
+    <button class="slider-btn next-btn" id="lightbox-next">&gt;</button>
+</div>
 
     <script src="{{ site.baseurl }}/assets/js/script.js?v={{ 'now' | date: '%s' }}"></script>
 </body>

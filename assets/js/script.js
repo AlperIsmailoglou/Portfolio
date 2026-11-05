@@ -31,9 +31,12 @@ if (modal) {
         images.forEach((img, index) => {
             const div = document.createElement('div');
             div.className = `modal-slide ${index === 0 ? 'active' : ''}`;
-            const finalImgSrc = img.startsWith('http') || img.startsWith('/') ? img : `${baseUrl}/${img}`;
+
+            // CORRECTED: Safely merge the baseUrl with the CMS image path
+            const cleanImg = img.trim();
+            const finalImgSrc = cleanImg.startsWith('http') ? cleanImg : `${baseUrl}${cleanImg.startsWith('/') ? cleanImg : '/' + cleanImg}`;
+
             div.style.backgroundImage = `url('${finalImgSrc}')`;
-            // Insert behind the buttons
             imgContainer.insertBefore(div, nextBtn);
         });
         slides = imgContainer.querySelectorAll('.modal-slide');
@@ -107,16 +110,37 @@ if (detailBox) {
         imgs[currentIndex].classList.add('active');
     });
 
+    // Lightbox Logic
     const lightbox = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+    let lightboxIndex = 0;
 
-    imgs.forEach(img => {
+    imgs.forEach((img, index) => {
         img.addEventListener('click', () => {
+            lightboxIndex = index;
             lightboxImg.src = img.src;
             lightbox.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         });
     });
+
+    if (lightboxNext) {
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents the click from closing the modal
+            lightboxIndex = (lightboxIndex + 1) % imgs.length;
+            lightboxImg.src = imgs[lightboxIndex].src;
+        });
+    }
+
+    if (lightboxPrev) {
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevents the click from closing the modal
+            lightboxIndex = (lightboxIndex - 1 + imgs.length) % imgs.length;
+            lightboxImg.src = imgs[lightboxIndex].src;
+        });
+    }
 
     function closeLightbox() {
         lightbox.classList.add('hidden');
@@ -124,5 +148,7 @@ if (detailBox) {
     }
 
     document.getElementById('close-lightbox').addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
 }
