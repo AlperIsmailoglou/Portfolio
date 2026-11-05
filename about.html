@@ -2,13 +2,23 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Portfolio</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%s' }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <div class="nav-container">
+        <nav class="pill-menu">
+            <a href="{{ site.baseurl }}/work.html" class="pill-link">Work</a>
+            <a href="{{ site.baseurl }}/" class="pill-link">Home</a>
+            <a href="{{ site.baseurl }}/about.html" class="pill-link active">About</a>
+        </nav>
+    </div>
     <header class="hero" style="height: 40vh;">
         <div class="hero-content">
             <h1>About Me</h1>
@@ -24,14 +34,18 @@
         <div style="display: flex; gap: 4rem; align-items: flex-start; flex-wrap: wrap;">
             <div style="flex: 1; min-width: 300px;">
                 <!-- Add an image of yourself to assets/uploads/ -->
-                <img src="{{ site.baseurl }}/assets/uploads/profile.jpg" alt="My Photo" style="width: 100%; border-radius: 8px;" class="image-skeleton">
+                <img src="{{ site.baseurl }}/assets/uploads/profile.jpg" alt="My Photo"
+                    style="width: 100%; border-radius: 8px;" class="image-skeleton">
             </div>
             <div style="flex: 2; min-width: 300px;">
                 <h2 style="margin-bottom: 1.5rem;">Academic Rigor & System Design</h2>
-                <p style="color: #475569; font-size: 1.1rem; margin-bottom: 1rem;">Put your bio here. Explain your approach to solving problems and optimizing architecture.</p>
-                <a href="{{ site.baseurl }}/assets/docs/CV.pdf" target="_blank" class="btn" style="margin-top: 1rem;">Download Full CV</a>
+                <p style="color: #475569; font-size: 1.1rem; margin-bottom: 1rem;">Put your bio here. Explain your
+                    approach to solving problems and optimizing architecture.</p>
+                <a href="{{ site.baseurl }}/assets/docs/CV.pdf" target="_blank" class="btn"
+                    style="margin-top: 1rem;">Download Full CV</a>
             </div>
         </div>
     </main>
 </body>
+
 </html>

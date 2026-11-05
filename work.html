@@ -1,0 +1,63 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work | Portfolio</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css?v={{ 'now' | date: '%s' }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="nav-container">
+        <nav class="pill-menu">
+            <a href="{{ site.baseurl }}/work.html" class="pill-link active">Work</a>
+            <a href="{{ site.baseurl }}/" class="pill-link">Home</a>
+            <a href="{{ site.baseurl }}/about.html" class="pill-link">About</a>
+        </nav>
+    </div>
+
+    <main class="section-padding">
+        <h1 class="section-title" style="text-align: center; font-size: 3rem;">All Projects</h1>
+
+        <!-- JAVASCRIPT FILTERS -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="academic">Academic</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+        </div>
+
+        <div class="project-grid" id="filterable-grid">
+            <!-- No limit tag here, so it loads every project -->
+            {% for project in site.projects %}
+            {% assign gallery_imgs = project.gallery | join: "," %}
+
+            <!-- data-category powers the JS filter -->
+            <article class="project-card fade-in image-skeleton" data-category="{{ project.category | downcase }}"
+                data-title="{{ project.title }}" data-desc="{{ project.description }}" data-gallery="{{ gallery_imgs }}"
+                data-url="{{ site.baseurl }}{{ project.url }}">
+
+                {% if project.gallery.size > 0 %}
+                <div class="card-bg" style="background-image: url('{{ site.baseurl }}{{ project.gallery[0] }}');"></div>
+                {% else %}
+                <div class="card-bg" style="background-color: #e2e8f0;"></div>
+                {% endif %}
+
+                <div class="card-overlay">
+                    <h3 class="card-title">{{ project.title }}</h3>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </main>
+
+    <!-- Paste the EXACT SAME <div id="project-modal"> block and <script> tag from index.html here at the bottom -->
+
+    <script src="{{ site.baseurl }}/assets/js/script.js?v={{ 'now' | date: '%s' }}"></script>
+</body>
+
+</html>

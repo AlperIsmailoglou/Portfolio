@@ -74,29 +74,44 @@ body {
 }
 
 /* --- HERO --- */
+.hero-wrapper {
+    padding: 0 2rem 2rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .hero {
-    height: 80vh;
+    height: 70vh;
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: #e2e8f0;
-    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    /* Ensure you upload 'hero-bg.jpg' to your assets/uploads folder */
+    background-image: url('../uploads/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    letter-spacing: -1px;
-    margin-bottom: 0.5rem;
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
-.hero p {
-    font-size: 1.25rem;
-    color: #475569;
-    margin-bottom: 2rem;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
 }
 
-.hero-nav a {
+.hero-content h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 0.5rem; color: white; }
+.hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 2rem; }
+
+/*.hero-nav a {
     margin: 0 1rem;
     text-decoration: none;
     color: var(--text-color);
@@ -104,7 +119,7 @@ body {
     text-transform: uppercase;
     font-size: 0.85rem;
     letter-spacing: 1px;
-}
+} */
 
 /* --- PROJECT CARDS --- */
 .project-grid {
@@ -291,6 +306,20 @@ footer a {
     opacity: 1;
     z-index: 5;
 }
+
+/* --- WORK PAGE FILTERS --- */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+.filter-btn {
+    background: none; border: 1px solid var(--text-color); padding: 0.5rem 1.5rem;
+    border-radius: 999px; cursor: pointer; font-family: var(--font-main);
+    transition: all 0.3s ease;
+}
+.filter-btn.active, .filter-btn:hover { background: var(--text-color); color: white; }
 
 /* --- DETAIL PAGE 2:1 RESPONSIVE BOX --- */
 .detail-gallery-box {

@@ -12,17 +12,24 @@
 </head>
 
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Hello, I'm [Your Name].</h1>
-            <p>I build elegant, functional solutions.</p>
-            <nav class="hero-nav">
-                <a href="{{ site.baseurl }}/">Home Page</a>
-                <a href="#work">Work</a>
-                <a href="{{ site.baseurl }}/about.html">About Me</a>
-            </nav>
-        </div>
-    </header>
+
+    <div class="nav-container">
+        <nav class="pill-menu">
+            <a href="{{ site.baseurl }}/work.html" class="pill-link">Work</a>
+            <a href="{{ site.baseurl }}/" class="pill-link active">Home</a>
+            <a href="{{ site.baseurl }}/about.html" class="pill-link">About</a>
+        </nav>
+    </div>
+
+    <div class="hero-wrapper">
+        <header class="hero image-skeleton">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Hello, I'm [Your Name].</h1>
+                <p>I build elegant, functional solutions.</p>
+            </div>
+        </header>
+    </div>
 
     <main>
         <section id="about" class="section-padding">
@@ -35,11 +42,14 @@
         <section id="work" class="section-padding">
             <h2 class="section-title">Latest Work</h2>
             <div class="project-grid">
-                {% for project in site.projects %}
+                <!-- Limit strictly to latest 6 projects -->
+                {% for project in site.projects limit: 6 %}
                 {% assign gallery_imgs = project.gallery | join: "," %}
-                <article class="project-card fade-in image-skeleton" data-title="{{ project.title }}"
-                    data-desc="{{ project.description }}" data-gallery="{{ gallery_imgs }}"
-                    data-url="{{ site.baseurl }}{{ project.url }}">
+
+                <!-- We add data-category here to ensure the modal still works perfectly -->
+                <article class="project-card fade-in image-skeleton" data-category="{{ project.category | downcase }}"
+                    data-title="{{ project.title }}" data-desc="{{ project.description }}"
+                    data-gallery="{{ gallery_imgs }}" data-url="{{ site.baseurl }}{{ project.url }}">
 
                     {% if project.gallery.size > 0 %}
                     <div class="card-bg" style="background-image: url('{{ site.baseurl }}{{ project.gallery[0] }}');">
@@ -53,6 +63,10 @@
                     </div>
                 </article>
                 {% endfor %}
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="{{ site.baseurl }}/work.html" class="btn">View All Projects</a>
             </div>
         </section>
 

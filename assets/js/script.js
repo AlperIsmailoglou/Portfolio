@@ -152,3 +152,32 @@ if (detailBox) {
         if (e.target === lightbox) closeLightbox();
     });
 }
+
+// --- WORK PAGE CATEGORY FILTER ---
+const filterBtns = document.querySelectorAll('.filter-btn');
+const allProjects = document.querySelectorAll('.project-card');
+
+if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active styling on buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            // Hide/Show cards based on category
+            allProjects.forEach(card => {
+                const category = card.getAttribute('data-category');
+                if (filterValue === 'all' || category === filterValue) {
+                    card.style.display = 'block';
+                    // Re-trigger fade in animation
+                    card.classList.remove('visible');
+                    setTimeout(() => card.classList.add('visible'), 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+}
