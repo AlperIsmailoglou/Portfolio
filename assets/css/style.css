@@ -76,7 +76,7 @@ body {
     font-weight: 300;
 }
 
-.image-skeleton {
+/*.image-skeleton {
     background: #e2e8f0;
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
@@ -91,7 +91,7 @@ body {
     50% {
         opacity: 0.5;
     }
-}
+}*/
 
 .btn {
     display: inline-block;
