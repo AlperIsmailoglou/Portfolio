@@ -21,18 +21,25 @@ body {
     font-family: var(--font-main);
     line-height: 1.6;
 }
+
 /* --- PILL NAVIGATION --- */
 .nav-container {
     padding: 2rem 2rem 1rem 2rem;
     display: flex;
     justify-content: center;
+    background-color: var(--bg-color);
+    /* Added to block background lines */
+    position: relative;
+    z-index: 20;
 }
 
 .pill-menu {
     display: inline-flex;
     border: 2px solid var(--primary-color);
-    border-radius: 999px; /* Creates a perfect responsive pill */
-    padding: 0.25rem; /* Small gap between border and active background */
+    border-radius: 999px;
+    /* Creates a perfect responsive pill */
+    padding: 0.25rem;
+    /* Small gap between border and active background */
     background: transparent;
 }
 
@@ -142,8 +149,18 @@ body {
     color: white;
 }
 
-.hero-content h1 { font-size: 3.5rem; letter-spacing: -1px; margin-bottom: 0.5rem; color: white; }
-.hero-content p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 2rem; }
+.hero-content h1 {
+    font-size: 3.5rem;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #e2e8f0;
+    margin-bottom: 2rem;
+}
 
 /*.hero-nav a {
     margin: 0 1rem;
@@ -216,6 +233,10 @@ footer {
     text-align: center;
     padding: 2rem;
     border-top: 1px solid #e2e8f0;
+    background-color: var(--bg-color);
+    /* Added to block background lines */
+    position: relative;
+    z-index: 20;
 }
 
 footer a {
@@ -348,12 +369,22 @@ footer a {
     gap: 1rem;
     margin-bottom: 3rem;
 }
+
 .filter-btn {
-    background: none; border: 1px solid var(--text-color); padding: 0.5rem 1.5rem;
-    border-radius: 999px; cursor: pointer; font-family: var(--font-main);
+    background: none;
+    border: 1px solid var(--text-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-family: var(--font-main);
     transition: all 0.3s ease;
 }
-.filter-btn.active, .filter-btn:hover { background: var(--text-color); color: white; }
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--text-color);
+    color: white;
+}
 
 /* --- DETAIL PAGE 2:1 RESPONSIVE BOX --- */
 .detail-gallery-box {
@@ -417,4 +448,87 @@ footer a {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+/* --- 3D ANIMATED BACKGROUND ENGINE --- */
+.animated-bg-container {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    /* Keeps it behind all content */
+    background-color: #f1f3f6;
+    /* Modern off-white base */
+    overflow: hidden;
+}
+
+.animated-line {
+    position: absolute;
+    inset: 0;
+    /* Expanding size prevents edge clipping during animation */
+    width: 150vw;
+    height: 150vh;
+}
+
+.line-1 {
+    /* 45 degree angle moving bottom-right to top-left */
+    background-image: repeating-linear-gradient(-45deg,
+            transparent 0px,
+            transparent 240px,
+            rgba(255, 255, 255, 0.4) 241px,
+            /* Slight top glow */
+            rgba(255, 255, 255, 1) 242px,
+            /* Core pure white line */
+            rgba(173, 216, 230, 0.7) 245px,
+            /* 3px light blue bottom shadow */
+            rgba(160, 160, 160, 0.2) 250px
+            /* Trailing grey shadow */
+        );
+    animation: slideTopLeft 20s linear infinite;
+    /* Slow, endless pace */
+}
+
+.line-2 {
+    /* 135 degree angle moving bottom-left to top-right */
+    background-image: repeating-linear-gradient(45deg,
+            transparent 0px,
+            transparent 240px,
+            rgba(255, 255, 255, 0.4) 241px,
+            rgba(255, 255, 255, 1) 242px,
+            rgba(173, 216, 230, 0.7) 245px,
+            rgba(160, 160, 160, 0.2) 250px);
+    animation: slideTopRight 20s linear infinite;
+}
+
+/* Base64 SVG Noise Filter for the grainy 3D texture */
+.animated-grain {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    opacity: 0.35;
+    pointer-events: none;
+    /* Allows clicks to pass through */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: multiply;
+}
+
+/* The exact mathematical offset (250px / cos(45)) for a seamless visual loop */
+@keyframes slideTopLeft {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-353.553px, -353.553px);
+    }
+}
+
+@keyframes slideTopRight {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(353.553px, -353.553px);
+    }
 }
