@@ -13,26 +13,17 @@
 
 <body>
 
-    <!-- SVG FILTER ENGINE (Isolated Blur & Grain) -->
-<svg style="display:none;">
-    <filter id="grain-filter">
-        <!-- baseFrequency="3.0" creates ultra-fine grain -->
-        <feTurbulence type="fractalNoise" baseFrequency="3.0" numOctaves="3" result="noise" />
-        <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.25 0" in="noise" result="coloredNoise" />
-        <!-- Softens the sharp gradient lines -->
-        <feGaussianBlur stdDeviation="2.5" in="SourceGraphic" result="blurredLines" />
-        <!-- Masks the grain so it ONLY exists where the shadows and lines exist -->
-        <feComposite operator="in" in="coloredNoise" in2="blurredLines" result="maskedNoise" />
-        <feBlend mode="multiply" in="maskedNoise" in2="blurredLines" />
-    </filter>
-</svg>
-
-<!-- 3D ANIMATED BACKGROUND -->
+ <!-- FLOATING LIGHTS BACKGROUND -->
 <div class="animated-bg-container">
-    <div class="lines-wrapper">
-        <div class="animated-line line-1"></div>
-        <div class="animated-line line-2"></div>
-    </div>
+    <div class="light x1"></div>
+    <div class="light x2"></div>
+    <div class="light x3"></div>
+    <div class="light x4"></div>
+    <div class="light x5"></div>
+    <div class="light x6"></div>
+    <div class="light x7"></div>
+    <div class="light x8"></div>
+    <div class="light x9"></div>
 </div>
 
     <div class="nav-container">

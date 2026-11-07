@@ -451,75 +451,44 @@ footer a {
 }
 
 
-/* --- 3D ANIMATED BACKGROUND ENGINE --- */
+/* --- FLOATING LIGHTS BACKGROUND ENGINE --- */
 .animated-bg-container {
-    position: fixed; 
-    inset: 0; 
-    z-index: -2;
-    background-color: #f8fafc; /* Clean, modern off-white */
-    overflow: hidden;
-}
-
-.lines-wrapper {
-    position: absolute; 
+    position: fixed;
     inset: 0;
-    /* Triggers the invisible SVG engine to blur and grain the lines only */
-    filter: url(#grain-filter); 
+    z-index: -2;
+    /* Clean off-white/grey radial gradient */
+    background: radial-gradient(circle at center, #ffffff 0%, #f1f3f6 100%);
+    overflow: hidden; /* Contains the lights strictly to the background */
 }
 
-.animated-line {
+.light {
     position: absolute;
-    top: -100%; 
-    left: -100%; 
-    width: 300%; 
-    height: 300%; /* Massive oversized canvas prevents edge clipping */
+    width: 0px;
+    opacity: 0;
+    background-color: white;
+    /* Creates the glowing vertical line (Azure color) */
+    box-shadow: #007fff 0px 0px 20px 2px;
+    top: 100vh;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
 }
 
-.line-1 {
-    /* 45deg: Bottom-left to top-right. Shadow trails on the bottom-left (<880px) */
-    background-image: repeating-linear-gradient(
-        45deg,
-        transparent 0px,
-        transparent 400px,
-        rgba(160, 160, 160, 0) 401px,
-        rgba(160, 160, 160, 0.25) 800px,  /* Massive 400px Grey Shadow */
-        rgba(0, 127, 255, 0.1) 840px,
-        rgba(0, 127, 255, 0.5) 870px,     /* Azure Shadow */
-        rgba(255, 255, 255, 1) 880px,     /* Pure White Core Start */
-        rgba(255, 255, 255, 1) 1000px,    /* Pure White Core End (120px wide) */
-        rgba(255, 255, 255, 0.3) 1050px,  /* Slight top glow */
-        transparent 1200px,
-        transparent 2000px
-    );
-    animation: slideTopLeft 30s linear infinite;
-}
+.x1 { animation: floatUp 4s infinite linear; transform: scale(1.0); }
+.x2 { animation: floatUp 7s infinite linear; transform: scale(1.6); left: 15%; }
+.x3 { animation: floatUp 2.5s infinite linear; transform: scale(.5); left: -15%; }
+.x4 { animation: floatUp 4.5s infinite linear; transform: scale(1.2); left: -34%; }
+.x5 { animation: floatUp 8s infinite linear; transform: scale(2.2); left: -57%; }
+.x6 { animation: floatUp 3s infinite linear; transform: scale(.8); left: -81%; }
+.x7 { animation: floatUp 5.3s infinite linear; transform: scale(3.2); left: 37%; }
+.x8 { animation: floatUp 4.7s infinite linear; transform: scale(1.7); left: 62%; }
+.x9 { animation: floatUp 4.1s infinite linear; transform: scale(0.9); left: 85%; }
 
-.line-2 {
-    /* 135deg: Top-left to bottom-right. Shadow trails on the bottom-right (>1000px) */
-    background-image: repeating-linear-gradient(
-        135deg,
-        transparent 0px,
-        transparent 700px,
-        rgba(255, 255, 255, 0.3) 830px,   /* Slight top glow */
-        rgba(255, 255, 255, 1) 880px,     /* Pure White Core Start */
-        rgba(255, 255, 255, 1) 1000px,    /* Pure White Core End (120px wide) */
-        rgba(0, 127, 255, 0.5) 1010px,    /* Azure Shadow */
-        rgba(0, 127, 255, 0.1) 1040px,
-        rgba(160, 160, 160, 0.25) 1080px, /* Massive 400px Grey Shadow Start */
-        rgba(160, 160, 160, 0) 1480px,    /* Grey Shadow Fade */
-        transparent 1481px,
-        transparent 2000px
-    );
-    animation: slideTopRight 35s linear infinite; /* Slightly slower to create parallax offset */
-}
-
-/* 1414.21px is exactly 2000px * cos(45). This guarantees a flawless infinite loop. */
-@keyframes slideTopLeft {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-1414.21px, -1414.21px); }
-}
-
-@keyframes slideTopRight {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(1414.21px, -1414.21px); }
+@keyframes floatUp {
+    0% { top: 100vh; opacity: 0; }
+    25% { opacity: 1; }
+    50% { top: 0vh; opacity: 0.8; }
+    75% { opacity: 1; }
+    100% { top: -100vh; opacity: 0; }
 }
