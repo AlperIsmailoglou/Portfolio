@@ -181,3 +181,16 @@ if (filterBtns.length > 0) {
         });
     });
 }
+
+
+// --- DYNAMIC BACK BUTTON LOGIC ---
+const backBtn = document.getElementById('dynamic-back-btn');
+if (backBtn) {
+    if (document.referrer.includes('work.html')) {
+        backBtn.href = `${baseUrl}/work.html`;
+        backBtn.innerHTML = '&larr; Back to All Projects';
+    } else {
+        backBtn.href = `${baseUrl}/#work`;
+        backBtn.innerHTML = '&larr; Back to Home';
+    }
+}
