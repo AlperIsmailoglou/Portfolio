@@ -453,82 +453,73 @@ footer a {
 
 /* --- 3D ANIMATED BACKGROUND ENGINE --- */
 .animated-bg-container {
-    position: fixed;
-    inset: 0;
+    position: fixed; 
+    inset: 0; 
     z-index: -2;
-    /* Keeps it behind all content */
-    background-color: #f1f3f6;
-    /* Modern off-white base */
+    background-color: #f8fafc; /* Clean, modern off-white */
     overflow: hidden;
+}
+
+.lines-wrapper {
+    position: absolute; 
+    inset: 0;
+    /* Triggers the invisible SVG engine to blur and grain the lines only */
+    filter: url(#grain-filter); 
 }
 
 .animated-line {
     position: absolute;
-    inset: 0;
-    /* Expanding size prevents edge clipping during animation */
-    width: 150vw;
-    height: 150vh;
+    top: -100%; 
+    left: -100%; 
+    width: 300%; 
+    height: 300%; /* Massive oversized canvas prevents edge clipping */
 }
 
 .line-1 {
-    /* 45 degree angle moving bottom-right to top-left */
-    background-image: repeating-linear-gradient(-45deg,
-            transparent 0px,
-            transparent 240px,
-            rgba(255, 255, 255, 0.4) 241px,
-            /* Slight top glow */
-            rgba(255, 255, 255, 1) 242px,
-            /* Core pure white line */
-            rgba(173, 216, 230, 0.7) 245px,
-            /* 3px light blue bottom shadow */
-            rgba(160, 160, 160, 0.2) 250px
-            /* Trailing grey shadow */
-        );
-    animation: slideTopLeft 20s linear infinite;
-    /* Slow, endless pace */
+    /* 45deg: Bottom-left to top-right. Shadow trails on the bottom-left (<880px) */
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent 0px,
+        transparent 400px,
+        rgba(160, 160, 160, 0) 401px,
+        rgba(160, 160, 160, 0.25) 800px,  /* Massive 400px Grey Shadow */
+        rgba(0, 127, 255, 0.1) 840px,
+        rgba(0, 127, 255, 0.5) 870px,     /* Azure Shadow */
+        rgba(255, 255, 255, 1) 880px,     /* Pure White Core Start */
+        rgba(255, 255, 255, 1) 1000px,    /* Pure White Core End (120px wide) */
+        rgba(255, 255, 255, 0.3) 1050px,  /* Slight top glow */
+        transparent 1200px,
+        transparent 2000px
+    );
+    animation: slideTopLeft 30s linear infinite;
 }
 
 .line-2 {
-    /* 135 degree angle moving bottom-left to top-right */
-    background-image: repeating-linear-gradient(45deg,
-            transparent 0px,
-            transparent 240px,
-            rgba(255, 255, 255, 0.4) 241px,
-            rgba(255, 255, 255, 1) 242px,
-            rgba(173, 216, 230, 0.7) 245px,
-            rgba(160, 160, 160, 0.2) 250px);
-    animation: slideTopRight 20s linear infinite;
+    /* 135deg: Top-left to bottom-right. Shadow trails on the bottom-right (>1000px) */
+    background-image: repeating-linear-gradient(
+        135deg,
+        transparent 0px,
+        transparent 700px,
+        rgba(255, 255, 255, 0.3) 830px,   /* Slight top glow */
+        rgba(255, 255, 255, 1) 880px,     /* Pure White Core Start */
+        rgba(255, 255, 255, 1) 1000px,    /* Pure White Core End (120px wide) */
+        rgba(0, 127, 255, 0.5) 1010px,    /* Azure Shadow */
+        rgba(0, 127, 255, 0.1) 1040px,
+        rgba(160, 160, 160, 0.25) 1080px, /* Massive 400px Grey Shadow Start */
+        rgba(160, 160, 160, 0) 1480px,    /* Grey Shadow Fade */
+        transparent 1481px,
+        transparent 2000px
+    );
+    animation: slideTopRight 35s linear infinite; /* Slightly slower to create parallax offset */
 }
 
-/* Base64 SVG Noise Filter for the grainy 3D texture */
-.animated-grain {
-    position: absolute;
-    inset: 0;
-    z-index: 10;
-    opacity: 0.35;
-    pointer-events: none;
-    /* Allows clicks to pass through */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    mix-blend-mode: multiply;
-}
-
-/* The exact mathematical offset (250px / cos(45)) for a seamless visual loop */
+/* 1414.21px is exactly 2000px * cos(45). This guarantees a flawless infinite loop. */
 @keyframes slideTopLeft {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(-353.553px, -353.553px);
-    }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-1414.21px, -1414.21px); }
 }
 
 @keyframes slideTopRight {
-    0% {
-        transform: translate(0, 0);
-    }
-
-    100% {
-        transform: translate(353.553px, -353.553px);
-    }
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(1414.21px, -1414.21px); }
 }
