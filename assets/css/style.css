@@ -100,7 +100,7 @@ body {
     }
 }*/
 
-/*.btn {
+.btn {
     display: inline-block;
     padding: 0.8rem 2rem;
     background-color: var(--primary-color);
@@ -109,7 +109,7 @@ body {
     border-radius: 4px;
     transition: opacity 0.2s;
 }
-*/
+
 .btn:hover {
     opacity: 0.8;
 }
