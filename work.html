@@ -54,7 +54,22 @@
             {% endfor %}
         </div>
     </main>
-
+<!-- HIDDEN PREVIEW MODAL -->
+<div id="project-modal" class="modal-backdrop hidden">
+    <div class="modal-content">
+        <button id="close-modal" class="close-btn">&times;</button>
+        <div class="modal-left" id="modal-img-container">
+            <button class="slider-btn prev-btn" id="modal-prev">&lt;</button>
+            <!-- Images will be injected here by JS -->
+            <button class="slider-btn next-btn" id="modal-next">&gt;</button>
+        </div>
+        <div class="modal-right">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <a href="#" id="modal-link" class="btn">View Details</a>
+        </div>
+    </div>
+</div>
     <!-- Paste the EXACT SAME <div id="project-modal"> block and <script> tag from index.html here at the bottom -->
 
     <script src="{{ site.baseurl }}/assets/js/script.js?v={{ 'now' | date: '%s' }}"></script>
