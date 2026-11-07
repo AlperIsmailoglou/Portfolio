@@ -54,10 +54,10 @@ body {
     transition: all 0.3s ease;
 }
 
-.pill-link.active {
+/*.pill-link.active {
     background: var(--primary-color);
     color: white;
-}
+}*/
 
 .pill-link:not(.active):hover {
     background: #e2e8f0;
@@ -100,7 +100,7 @@ body {
     }
 }*/
 
-.btn {
+/*.btn {
     display: inline-block;
     padding: 0.8rem 2rem;
     background-color: var(--primary-color);
@@ -109,7 +109,7 @@ body {
     border-radius: 4px;
     transition: opacity 0.2s;
 }
-
+*/
 .btn:hover {
     opacity: 0.8;
 }
@@ -264,10 +264,10 @@ footer a {
     transition: background 0.3s ease;
 }
 
-.slider-btn:hover {
+/*.slider-btn:hover {
     background: rgba(0, 0, 0, 0.8);
 }
-
+*/
 .prev-btn {
     left: 1rem;
 }
@@ -380,12 +380,12 @@ footer a {
     transition: all 0.3s ease;
 }
 
-.filter-btn.active,
+/*.filter-btn.active,
 .filter-btn:hover {
     background: var(--text-color);
     color: white;
 }
-
+*/
 /* --- DETAIL PAGE 2:1 RESPONSIVE BOX --- */
 .detail-gallery-box {
     position: relative;
@@ -491,4 +491,57 @@ footer a {
     50% { top: 0vh; opacity: 0.8; }
     75% { opacity: 1; }
     100% { top: -100vh; opacity: 0; }
+}
+
+
+
+/* --- 3D BUTTON ENGINE (Black & Pressed States) --- */
+.btn,
+.pill-link.active,
+.filter-btn.active,
+.filter-btn:hover,
+.slider-btn:hover,
+.detail-slider-wrapper .slider-btn {
+    /* Top to bottom gradient (Slate to deep black) */
+    background: linear-gradient(to bottom, #334155, #020617);
+    color: white;
+    border: 1px solid transparent;
+    
+    /* The 4-layer requested shadow */
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.2),  /* Lighter tone top highlight */
+        inset 0 -2px 0 rgba(0, 0, 0, 0.9),       /* Darker tone bottom shadow */
+        0 1px 2px rgba(0, 0, 0, 0.5),            /* Actual drop shadow */
+        0 8px 24px -6px rgba(15, 23, 42, 0.6);   /* Soft glow of the button color */
+        
+    transition: all 0.2s ease;
+}
+
+/* Flipped Gradient & Sunk Shadow when actively pressed */
+.btn:active,
+.pill-link:active,
+.filter-btn:active,
+.slider-btn:active,
+.detail-slider-wrapper .slider-btn:active {
+    /* Bottom to top gradient */
+    background: linear-gradient(to top, #334155, #020617);
+    
+    /* Sinks the button visually into the page */
+    box-shadow: 
+        inset 0 3px 5px rgba(0, 0, 0, 0.9),
+        0 1px 1px rgba(255, 255, 255, 0.1);
+        
+    transform: translateY(2px); /* Physically pushes the button down */
+}
+
+/* Base adjustment for filter buttons to prevent layout shifting when borders disappear */
+.filter-btn {
+    background: none; 
+    border: 1px solid transparent; 
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px; 
+    cursor: pointer; 
+    font-family: var(--font-main);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 }
