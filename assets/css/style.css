@@ -145,6 +145,7 @@ body {
 
 .hero-content {
     position: relative;
+    bottom: 5%;
     z-index: 2;
     color: white;
 }
