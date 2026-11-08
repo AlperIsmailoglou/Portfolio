@@ -465,7 +465,7 @@ footer a {
     position: absolute;
     width: 0px;
     opacity: 0;
-    background-color: white;
+    background-color: rgb(235, 142, 56);
     /* Creates the glowing vertical line (Azure color) */
     box-shadow: #a4d2ff 0px 0px 20px 2px;
     top: 100vh;
