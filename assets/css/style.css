@@ -125,7 +125,8 @@ body {
     height: 70vh;
     border-radius: 20px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 4rem;
     justify-content: center;
     text-align: center;
     position: relative;
@@ -145,7 +146,6 @@ body {
 
 .hero-content {
     position: relative;
-    bottom: 5%;
     z-index: 2;
     color: white;
 }
