@@ -2,15 +2,16 @@
 title: Custom Ducktail Spoiler Design for a 1970 Volkswagen Beetle Scale Model
 category: Academic
 gallery:
-  - /assets/uploads/Gemini_Generated_Image_9oir0e9oir0e9oir.jpg
+  - /assets/uploads/ic_app.png
 description: |-
   Geomagic Design X / Wrap, PTC Creo Parametric, 3D Scanner Software
   Creaform HandySCAN 3D Scanner, FDM 3D Printer (PLA Filament)
-
-
-  This project demonstrates an end-to-end engineering workflow spanning 3D optical scanning, digital surface reconstruction, parametric CAD modeling, and Fused Deposition Modeling (FDM) additive manufacturing. The objective was to design, fit, and manufacture a custom aerodynamic ducktail spoiler for a vintage 1970 Volkswagen Beetle toy vehicle ("Pompieri" edition). Using a Creaform HandySCAN 3D handheld optical scanner, high-density point cloud data was captured from the physical model. The raw scan data was imported into Geomagic software, where topological defects, non-manifold edges, and mesh noise were repaired, allowing for accurate surface patch generation and solid model reconstruction of the vehicle's rear chassis.Following surface processing, the reconstructed geometry was exported as a .STEP neutral file and imported into PTC Creo Parametric for custom component design. Utilizing datum plane networks, surface features, freeform styling tools, and dimensional scaling, a bespoke ducktail spoiler was modeled to fit the curved contours of the Beetle’s engine cover. The final model was exported as an .STL file and fabricated via FDM 3D printing in Polylactic Acid (PLA) solid infill density (non-patterned) to guarantee structural rigidity and dimensional stability. Physical assembly confirmed precise interface fitting, validating the complete reverse engineering and Design for Additive Manufacturing  methodology.
 image: /assets/uploads/ic_app.png
 ---
+
+### Summary
+
+This project demonstrates an end-to-end engineering workflow spanning 3D optical scanning, digital surface reconstruction, parametric CAD modeling, and Fused Deposition Modeling (FDM) additive manufacturing. The objective was to design, fit, and manufacture a custom aerodynamic ducktail spoiler for a vintage 1970 Volkswagen Beetle toy vehicle ("Pompieri" edition). Using a Creaform HandySCAN 3D handheld optical scanner, high-density point cloud data was captured from the physical model. The raw scan data was imported into Geomagic software, where topological defects, non-manifold edges, and mesh noise were repaired, allowing for accurate surface patch generation and solid model reconstruction of the vehicle's rear chassis.Following surface processing, the reconstructed geometry was exported as a .STEP neutral file and imported into PTC Creo Parametric for custom component design. Utilizing datum plane networks, surface features, freeform styling tools, and dimensional scaling, a bespoke ducktail spoiler was modeled to fit the curved contours of the Beetle’s engine cover. The final model was exported as an .STL file and fabricated via FDM 3D printing in Polylactic Acid (PLA) solid infill density (non-patterned) to guarantee structural rigidity and dimensional stability. Physical assembly confirmed precise interface fitting, validating the complete reverse engineering and Design for Additive Manufacturing  methodology.
 
 ### Project Background and Objectives
 
@@ -75,6 +76,4 @@ The exported `.STEP` surface body served as the spatial foundation within PTC Cr
 
 The final ducktail spoiler component was isolated within Creo, verified for manifold solidity, and exported as a high-resolution `.STL` file (triangulated mesh using fine chord height and angle tolerances) for additive manufacturing slicing.
 
-![](/assets/uploads/Screenshot%202026-11-12%20141421.png)
-
-This project illustrates the full capability of combining optical reverse engineering with modern additive manufacturing. By capturing physical geometric constraints through 3D scanning, repairing mesh topology in Geomagic, modeling parametric features in Creo, and printing a$100\\%$solid PLA prototype, a custom component was brought from physical concept to digital engineering design and back to physical reality.
+This project illustrates the full capability of combining optical reverse engineering with modern additive manufacturing. By capturing physical geometric constraints through 3D scanning, repairing mesh topology in Geomagic, modeling parametric features in Creo, and printing prototype, a custom component was brought from physical concept to digital engineering design and back to physical reality.
