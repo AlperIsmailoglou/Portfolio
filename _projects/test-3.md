@@ -5,7 +5,7 @@ gallery:
   - /assets/uploads/deposito_tank3.png
   - /assets/uploads/deposito_tank1.png
   - /assets/uploads/deposito_tank2.png
-description: This project covers the modeling of an organic, aerodynamic motorcycle fuel tank. The shape emphasizes fluid surfacing, ergonomic knee cutouts, and proper frame clearance.
+description: This project covers the modeling of an organic, aerodynamic motorcycle fuel tank. The shape emphasizes fluid surfacing, ergonomic knee cutouts, and proper frame clearance. Created inside the Class
 image: ''
 ---
 
