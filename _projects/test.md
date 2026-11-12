@@ -26,11 +26,13 @@ The primary goal of this project was to design and manufacture a custom, aerodyn
 
 ## Technical Foundations of the Engineering Workflow
 
-> +------------------+     +------------------------+     +--------------------------+     +------------------------+
-> | 3D Scanning      | --> | Mesh Repair & Surface  | --> | Parametric CAD Modeling  | --> | Additive Manufacturing |
-> | (HandySCAN 3D)   |     | Reconstruction         |     | (PTC Creo Parametric)    |     | (FDM / PLA 100% Infill)|
-> | Point Cloud / STL|     | (Geomagic Design X)    |     | Custom Spoiler Design    |     | Physical Test Assembly |
-> +------------------+     +------------------------+     +--------------------------+     +------------------------+
+```plain
++------------------+     +------------------------+     +--------------------------+     +------------------------+
+| 3D Scanning      | --> | Mesh Repair & Surface  | --> | Parametric CAD Modeling  | --> | Additive Manufacturing |
+| (HandySCAN 3D)   |     | Reconstruction         |     | (PTC Creo Parametric)    |     | (FDM / PLA 100% Infill)|
+| Point Cloud / STL|     | (Geomagic Design X)    |     | Custom Spoiler Design    |     | Physical Test Assembly |
++------------------+     +------------------------+     +--------------------------+     +------------------------+
+```
 
 Laser triangulation scanners, such as the HandySCAN 3D, project laser lines across an object's surface while high-resolution cameras record the displacement of the lines in 3D space. Through spatial triangulation, position target positioning, and coordinate reference frames, the scanner generates point cloud data defined in three-dimensional. These points are converted in real time into a surface mesh consisting of triangular polygons ( STL format ).
 
