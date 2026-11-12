@@ -5,7 +5,7 @@ gallery:
   - /assets/uploads/coffeMaker3.png
   - /assets/uploads/coffeMaker1.png
   - /assets/uploads/coffeMaker2.png
-description: This project features the design of a modern dual-group commercial espresso machine. The model combines smooth curved outer housing with detailed operational components and a digital display interface.
+description: This project features the design of a modern dual-group commercial espresso machine. The model combines smooth curved outer housing with detailed operational components and a digital display interface. Created inside the Class
 image: ''
 ---
 
