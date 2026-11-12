@@ -1,22 +1,80 @@
 ---
-title: Test
+title: Custom Ducktail Spoiler Design for a 1970 Volkswagen Beetle Scale Model
 category: Academic
 gallery:
-  - /assets/uploads/ic_app.png
-  - /assets/uploads/wicut_1.jpg
+  - /assets/uploads/Gemini_Generated_Image_9oir0e9oir0e9oir.jpg
 description: |-
-  Test 
-  121
-  TEST ASASSA
+  Geomagic Design X / Wrap, PTC Creo Parametric, 3D Scanner Software
+  Creaform HandySCAN 3D Scanner, FDM 3D Printer (PLA Filament)
+
+
+  This project demonstrates an end-to-end engineering workflow spanning 3D optical scanning, digital surface reconstruction, parametric CAD modeling, and Fused Deposition Modeling (FDM) additive manufacturing. The objective was to design, fit, and manufacture a custom aerodynamic ducktail spoiler for a vintage 1970 Volkswagen Beetle toy vehicle ("Pompieri" edition). Using a Creaform HandySCAN 3D handheld optical scanner, high-density point cloud data was captured from the physical model. The raw scan data was imported into Geomagic software, where topological defects, non-manifold edges, and mesh noise were repaired, allowing for accurate surface patch generation and solid model reconstruction of the vehicle's rear chassis.Following surface processing, the reconstructed geometry was exported as a .STEP neutral file and imported into PTC Creo Parametric for custom component design. Utilizing datum plane networks, surface features, freeform styling tools, and dimensional scaling, a bespoke ducktail spoiler was modeled to fit the curved contours of the Beetle’s engine cover. The final model was exported as an .STL file and fabricated via FDM 3D printing in Polylactic Acid (PLA) with a $100\%$ solid infill density (non-patterned) to guarantee structural rigidity and dimensional stability. Physical assembly confirmed precise interface fitting, validating the complete reverse engineering and Design for Additive Manufacturing  methodology.
 image: /assets/uploads/ic_app.png
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lacinia elit nunc. Nulla at odio at turpis vestibulum pulvinar et quis lacus. Suspendisse id dolor ac tellus faucibus ullamcorper. Phasellus eu sagittis nisl, quis tincidunt sem. Phasellus faucibus, nisi ut ullamcorper dictum, ex nisi tristique magna, vitae elementum nisi ante at eros. Aliquam bibendum auctor nibh vitae tempor. Nullam a varius lorem.
+### Project Background and Objectives
 
-Ut turpis purus, faucibus aliquam mi eu, venenatis tincidunt augue. Mauris malesuada porta neque eget egestas. Duis blandit, felis dignissim maximus euismod, justo lacus tincidunt nisi, euismod finibus neque sapien ac elit. Phasellus fermentum felis a faucibus vulputate. Donec posuere interdum mi. Vivamus sed scelerisque erat. Suspendisse eget convallis ex. Mauris ac lectus sed tellus pulvinar vulputate. Sed ultricies felis sit amet nunc pulvinar, et condimentum arcu condimentum. Morbi sit amet rutrum nibh. Fusce egestas dignissim accumsan. Aliquam erat volutpat. Pellentesque at risus et felis accumsan vulputate. Donec a mi lobortis, suscipit nisl nec, hendrerit metus.
+Reverse engineering plays a vital role in modern product design, automotive restoration, and bespoke aftermarket component manufacturing. When legacy physical objects lack original 3D CAD data, optical surface scanning provides a non-destructive method for capturing physical dimensions and transforming them into editable digital models.
 
-Donec suscipit odio in augue tempus, varius rutrum libero lobortis. Suspendisse quis semper quam, eget rhoncus nisi. In mollis lectus est, nec consectetur dui ullamcorper at. Fusce laoreet vitae risus nec cursus. Nunc vitae cursus velit. Aenean pellentesque laoreet massa a tristique. Vivamus eu odio et justo mattis imperdiet. Nam aliquam quam et diam tempus condimentum. Maecenas dui est, imperdiet a ligula ac, suscipit gravida purus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam interdum hendrerit nibh sed ornare. Quisque facilisis ullamcorper erat, quis iaculis sem ullamcorper in.
+The primary goal of this project was to design and manufacture a custom, aerodynamically styled ducktail spoiler tailored specifically to fit the rear deck lid of a 1970 Volkswagen Beetle scale model car. Achieving an exact interface fit required extracting the compound curves of the vintage bodywork with high spatial fidelity, generating watertight NURBS surfaces, designing a complementary aftermarket component, and producing a functional physical prototype using additive manufacturing.
 
-Proin in pulvinar dolor, ut finibus arcu. Duis metus mauris, sollicitudin et ullamcorper nec, vestibulum ac turpis. Quisque at convallis leo, non varius ex. Fusce mollis quam at arcu ultrices iaculis. Fusce elementum rutrum odio, non varius turpis tempus eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse ac lacus non orci luctus porta in ac ex. Pellentesque eget rutrum ligula. Pellentesque nec arcu venenatis, euismod magna sit amet, iaculis mi. Aliquam scelerisque tempus pretium. Suspendisse potenti. Ut sollicitudin interdum porta. Vivamus sit amet leo id dolor efficitur vehicula in eget justo. Praesent quis venenatis libero. Integer sollicitudin mauris a eros pretium tempus.
+- **High-Fidelity Data Acquisition:** Capture the physical body geometry of the scale model vehicle using handheld laser scanning.
+- **Advanced Mesh Repair & Surface Reconstruction:** Clean raw polygonal scan data, repair topology, and convert organic mesh geometry into solid CAD entities within Geomagic.
+- **Parametric CAD Integration & Modeling:** Interface the reverse-engineered surface geometry within PTC Creo Parametric to model a custom ducktail spoiler that perfectly conforms to the vehicle's rear curvature.
+- **Additive Manufacturing Realization:** Prepare the model for FDM fabrication, set optimal slicing and infill parameters ($100\\%$solid density), print the component in PLA material, and perform final post-processing and assembly verification.
 
-Phasellus condimentum ultrices elit, et aliquam justo dictum a. Aliquam mattis mattis diam eget semper. Praesent ultrices libero ac ipsum cursus rutrum. Vivamus nec massa id tortor gravida ultricies sit amet a elit. Nunc vitae justo dui. Proin aliquam quam at tortor pharetra auctor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam, ligula et laoreet congue, tortor nisi dictum nunc, quis elementum elit metus ac dui.
+## Technical Foundations of the Engineering Workflow
+
+> +------------------+     +------------------------+     +--------------------------+     +------------------------+
+> | 3D Scanning      | --> | Mesh Repair & Surface  | --> | Parametric CAD Modeling  | --> | Additive Manufacturing |
+> | (HandySCAN 3D)   |     | Reconstruction         |     | (PTC Creo Parametric)    |     | (FDM / PLA 100% Infill)|
+> | Point Cloud / STL|     | (Geomagic Design X)    |     | Custom Spoiler Design    |     | Physical Test Assembly |
+> +------------------+     +------------------------+     +--------------------------+     +------------------------+
+
+Laser triangulation scanners, such as the HandySCAN 3D, project laser lines across an object's surface while high-resolution cameras record the displacement of the lines in 3D space. Through spatial triangulation, position target positioning, and coordinate reference frames, the scanner generates point cloud data defined in three-dimensional. These points are converted in real time into a surface mesh consisting of triangular polygons ( STL format ).
+
+Polygonal meshes lack parametric history and math-defined boundaries. To transform a triangular mesh into an editable CAD solid, the surface must undergo topological decomposition:
+
+1. Segmentation of the mesh into geometric regions based on curvature change.
+2. Construction of surface boundary curves (contours).
+3. Fitting of Non-Uniform Rational B-Spline (NURBS) surface patches across the region networks.
+4. Sewing patches into a closed, watertight boundary representation (B-Rep) solid entity.
+
+Fused Deposition Modeling creates physical parts layer by layer by extruding thermoplastic material through a heated nozzle. Key factors influencing part performance include layer orientation, thermal contraction, and infill density. For this project, a$100\\%$solid infill parameter was chosen to maximize mechanical resistance and eliminate internal void structures.
+
+## Reverse Engineering & Mesh Reconstruction in Geomagic
+
+> Raw STL Import ➔ Defect Inspection ➔ Trim Geometry ➔ Tangent & Flat Bridging ➔ Mesh Doctor Repair ➔ Defeature ➔ Region Segmentation ➔ Patch Fitting ➔ STEP Export
+
+Upon importing the `.STL` mesh into Geomagic, a diagnostic assessment revealed several geometric imperfections:
+
+- **Missing Data / Open Holes:** Shadows and high-crease areas lacked mesh data.
+- **Surface Noise & Distortion:** Stray polygon clusters and irregular boundary edges were present along the underbody.
+- **Non-Manifold Geometry:** Self-intersecting edges and multi-connected vertices existed in complex curved transitions.
+
+The `Mesh Doctor` module was executed to identify and resolve subtle topological errors:
+
+- **Non-Manifold Edges:** \~200 detected and resolved.
+- **Self-Intersections:** Corrected by re-triangulating overlapping facets.
+- **Highly Creased Edges:** \~43 areas smoothed to eliminate surface stress points.
+- **Spikes & Small Components:** \~20 isolated floating mesh fragments removed.
+- **Small Holes & Tunnels:** Sealed systematically to enforce mesh integrity.
+
+The finalized solid model of the vehicle's rear section was exported from Geomagic as a `.STEP`  neutral file format, preserving exact geometric continuity for downstream CAD modeling.
+
+## CAD Modeling in PTC Creo Parametric
+
+The exported `.STEP` surface body served as the spatial foundation within PTC Creo Parametric to design a custom-fitting ducktail spoiler.
+
+- **Datum Planes (Offset Planes):** Created parallel and offset to the primary Cartesian planes (XY , XZ , YZ ), defining key reference elevations and offset zones around the engine cover.
+- **Datum Axes & Axis-Plane Intersections:** Established along the vehicle’s centerline symmetry axis and key structural mounting locations to maintain lateral alignment.
+- **Base Surface Extraction:** The top surface profile of the rear engine lid was referenced directly from the imported geometry to serve as the bottom interface mating surface of the spoiler.
+- **Freeform Styling:** Curvature-continuous curves  were drafted to define the swept upward lip characteristic of classic ducktail spoilers.
+- **Extrusion & Solid Features:** The side and upper profiles were extruded and trimmed using parametric boundary surfaces.
+- **Material Trimming:** The lower face of the spoiler was trimmed against the vehicle's curved body shell using Boolean subtraction, guaranteeing a zero-gap flush fit against the rear bodywork.
+
+The final ducktail spoiler component was isolated within Creo, verified for manifold solidity, and exported as a high-resolution `.STL` file (triangulated mesh using fine chord height and angle tolerances) for additive manufacturing slicing.
+
+![](/assets/uploads/Screenshot%202026-11-12%20141421.png)
+
+This project illustrates the full capability of combining optical reverse engineering with modern additive manufacturing. By capturing physical geometric constraints through 3D scanning, repairing mesh topology in Geomagic, modeling parametric features in Creo, and printing a$100\\%$solid PLA prototype, a custom component was brought from physical concept to digital engineering design and back to physical reality.
