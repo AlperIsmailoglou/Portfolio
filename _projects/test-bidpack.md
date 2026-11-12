@@ -3,6 +3,8 @@ title: Creo Parametric Tactical Camp Knife
 category: Academic
 gallery:
   - /assets/uploads/campknife3.png
+  - /assets/uploads/campknife2.png
+  - /assets/uploads/campknife1.png
 description: This project focuses on modeling a rugged tactical camp knife using two reference images imported directly into PTC Creo Parametric. The objective was to accurately recreate the complex blade serrations, ergonomic handle contours, and functional geometry.
 image: /assets/uploads/1000036529.jpg
 ---
