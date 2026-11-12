@@ -9,6 +9,8 @@ gallery:
   - /assets/uploads/AdditiveManufactoring_Car_dataCleanups2.png
   - /assets/uploads/AdditiveManufactoringCreo.jpg
   - /assets/uploads/AdditiveManufactoringSolidMark.jpg
+  - /assets/uploads/Beetle_before.jpg
+  - /assets/uploads/Beetle_after.jpg
 description: |-
   Geomagic Design X / Wrap, PTC Creo Parametric, 3D Scanner Software
   Creaform HandySCAN 3D Scanner, FDM 3D Printer (PLA Filament)
