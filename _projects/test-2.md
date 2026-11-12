@@ -30,6 +30,8 @@ Rather than jumping directly to CAD modeling or preliminary sketching, our team 
 
 ### Information Gathering and Context Analysis
 
+<br>
+
 Every design initiative within Studio 4 began in the field of contextual analysis and information gathering. Before generating solutions, our group focused on thoroughly understanding the **problem space**. This investigative phase involved qualitative user interviews, observational shadowing, ethnographic research, competitive benchmarking, and market trend analysis. We mapped user journeys to pinpoint physical and cognitive friction points, establishing clear personas that anchored our design goals.
 
 Simultaneously, we conducted primary technical research into material science, existing patents, ergonomic standards, and manufacturing constraints. For hardware and mechanical briefs, we performed teardowns of existing market products to analyze internal component arrangements, snap-fit joinery, wall thicknesses, and structural ribbing patterns. This dual focus on user behavior and technical precedent gave us a solid foundation of data. Rather than relying on assumptions, our initial project briefs were backed by clear problem statements and quantifiable design constraints, providing a baseline against which all subsequent ideas were measured.
@@ -37,6 +39,7 @@ Simultaneously, we conducted primary technical research into material science, e
 <br>
 
 ### Ideation and Problem Phase
+<br>
 
 With the context established, our group transitioned into the generative ideation phase. Here, the primary objective was **maximizing creative reach** while delaying premature judgment. We employed diverse ideation strategies, including morphological analysis, mind mapping, SCAMPER protocols, and rapid thumbnail sketching sessions. During these collaborative design sprints, every team member contributed rapid visual concepts, exploring radical variations in form, mechanical operation, component layout, and user interface design.
 
