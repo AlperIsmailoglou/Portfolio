@@ -6,6 +6,9 @@ gallery:
   - /assets/uploads/AdditiveManufactoring_Spoiler1.png
   - /assets/uploads/AdditiveManufactoring_Car_data.png
   - /assets/uploads/AdditiveManufactoring_Car_dataCleanups1.png
+  - /assets/uploads/AdditiveManufactoring_Car_dataCleanups2.png
+  - /assets/uploads/AdditiveManufactoringCreo.jpg
+  - /assets/uploads/AdditiveManufactoringSolidMark.jpg
 description: |-
   Geomagic Design X / Wrap, PTC Creo Parametric, 3D Scanner Software
   Creaform HandySCAN 3D Scanner, FDM 3D Printer (PLA Filament)
