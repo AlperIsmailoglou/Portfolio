@@ -2,7 +2,7 @@
 title: Custom Ducktail Spoiler Design for a 1970 Volkswagen Beetle Scale Model
 category: Academic
 gallery:
-  - /assets/uploads/ic_app.png
+  - /assets/uploads/AdditiveManufactoring.jpg
 description: |-
   Geomagic Design X / Wrap, PTC Creo Parametric, 3D Scanner Software
   Creaform HandySCAN 3D Scanner, FDM 3D Printer (PLA Filament)
