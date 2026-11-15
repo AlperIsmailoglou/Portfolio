@@ -3,6 +3,7 @@ title: 'Studio 4: Ideation and Advanced CAD Design'
 category: Academic
 gallery:
   - /assets/uploads/ideationDropDown.png
+  - /assets/uploads/Gemini_Generated_Image_wrzthtwrzthtwrzt.jpg
 description: |-
   Collaborative Design Group
   Semester Documentation
