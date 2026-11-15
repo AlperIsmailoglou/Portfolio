@@ -6,6 +6,7 @@ gallery:
   - /assets/uploads/Gemini_Generated_Image_wrzthtwrzthtwrzt.jpg
   - /assets/uploads/image_2026-11-15_162149763.png
   - /assets/uploads/image_2026-11-15_162123219.png
+  - /assets/uploads/Gemini_Generated_Image_m5wcd2m5wcd2m5wc.jpg
 description: |-
   Collaborative Design Group
   Semester Documentation
