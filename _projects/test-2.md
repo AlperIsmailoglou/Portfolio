@@ -4,6 +4,8 @@ category: Academic
 gallery:
   - /assets/uploads/ideationDropDown.png
   - /assets/uploads/Gemini_Generated_Image_wrzthtwrzthtwrzt.jpg
+  - /assets/uploads/image_2026-11-15_162149763.png
+  - /assets/uploads/image_2026-11-15_162123219.png
 description: |-
   Collaborative Design Group
   Semester Documentation
