@@ -43,6 +43,7 @@ gallery:
   - /assets/uploads/pasted-image-1794820572215.png
   - /assets/uploads/pasted-image-1794820709767.png
   - /assets/uploads/pasted-image-1794820758785.png
+  - /assets/uploads/1794821561761.jpg
 description: |-
   Collaborative Design Group
   Semester Documentation
