@@ -3,7 +3,6 @@ backend:
   repo: AlperIsmailoglou/Portfolio
   branch: main
   auth_methods: [token]
-  use_graphql: false # Forces the stable REST API to bypass network drops
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
