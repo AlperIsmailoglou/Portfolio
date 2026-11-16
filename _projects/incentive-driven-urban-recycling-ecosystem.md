@@ -3,6 +3,20 @@ title: Incentive-Driven Urban Recycling Ecosystem
 category: Academic
 gallery:
   - /assets/uploads/pasted-image-1794826527288.png
+  - /assets/uploads/pasted-image-1794827612421.svg
+  - /assets/uploads/pasted-image-1794827616493.svg
+  - /assets/uploads/pasted-image-1794827622523.svg
+  - /assets/uploads/pasted-image-1794827626893.svg
+  - /assets/uploads/pasted-image-1794827631150.svg
+  - /assets/uploads/pasted-image-1794827635297.svg
+  - /assets/uploads/pasted-image-1794827639200.svg
+  - /assets/uploads/pasted-image-1794827643217.svg
+  - /assets/uploads/pasted-image-1794827649952.svg
+  - /assets/uploads/pasted-image-1794827655858.svg
+  - /assets/uploads/pasted-image-1794827659820.svg
+  - /assets/uploads/pasted-image-1794828088108.png
+  - /assets/uploads/pasted-image-1794828110911.png
+  - /assets/uploads/pasted-image-1794828137004.png
 description: Developed as a strategic initiative to promote the circular economy, this project introduces an innovative, reward-based recycling service integrated directly into public transportation networks.
 ---
 
