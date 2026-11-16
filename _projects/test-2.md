@@ -16,6 +16,24 @@ gallery:
   - /assets/uploads/pasted-image-1794819769653.png
   - /assets/uploads/pasted-image-1794819785868.png
   - /assets/uploads/pasted-image-1794819841526.png
+  - /assets/uploads/pasted-image-1794819877727.png
+  - /assets/uploads/pasted-image-1794819902841.png
+  - /assets/uploads/pasted-image-1794819947133.png
+  - /assets/uploads/pasted-image-1794819965889.png
+  - /assets/uploads/pasted-image-1794819997789.png
+  - /assets/uploads/pasted-image-1794820058998.png
+  - /assets/uploads/pasted-image-1794820083453.png
+  - /assets/uploads/pasted-image-1794820099570.png
+  - /assets/uploads/pasted-image-1794820124820.png
+  - /assets/uploads/pasted-image-1794820148235.png
+  - /assets/uploads/pasted-image-1794820171914.png
+  - /assets/uploads/pasted-image-1794820191028.png
+  - /assets/uploads/pasted-image-1794820206733.png
+  - /assets/uploads/pasted-image-1794820224956.png
+  - /assets/uploads/pasted-image-1794820246926.png
+  - /assets/uploads/pasted-image-1794820271325.png
+  - /assets/uploads/pasted-image-1794820287107.png
+  - /assets/uploads/pasted-image-1794820362700.png
 description: |-
   Collaborative Design Group
   Semester Documentation
