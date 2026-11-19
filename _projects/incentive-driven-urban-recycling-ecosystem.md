@@ -22,27 +22,27 @@ description: Developed as a strategic initiative to promote the circular economy
 
 ### Summary
 
-\<br>
+<br>
 
 The project encompasses end-to-end service design—from extensive user research and competitive benchmarking to the digital prototyping of the app interface and the strategic blueprinting of smart bin infrastructure. Through cross-sector partnerships with transit authorities, waste management organizations, and corporate sponsors, this holistic ecosystem fosters a robust, user-centric approach to urban sustainability. Designed to incentivize sustainable urban mobility, the platform allows commuters to recycle paper, plastic, and aluminum at transit hubs in exchange for loyalty points. These points are seamlessly managed via a dedicated mobile application or an NFC-enabled smart card and can be redeemed for public transit fare discounts, such as a standard 10% ticket reduction. By bridging the gap between environmental responsibility and tangible financial benefits, the service aims to increase public transport ridership while significantly reducing the urban carbon footprint
 
-\<br>
+<br>
 
 ### Design Brief and Project Objectives
 
-\<br>
+<br>
 
 Conceived by the interdisciplinary design team "Group LAMP" (comprising Persefoni Maria Maratsou, Alper Ismail Oglou, Eleni Chanioti, and Maria Giannari), this initiative focuses on architecting a reward-based recycling service exclusively tailored for users of Mass Transit Systems. Following an extensive evaluation of domestic and international sustainability frameworks, the core hypothesis was established: providing tangible financial incentives for recycling acts as a powerful catalyst for enhancing environmental consciousness while delivering practical economic utility to citizens. The service architecture facilitates the recycling of high-volume everyday materials—specifically paper, aluminum, and plastic—by rewarding the user with digital points for every item deposited. These points are securely logged either through a physical smart card or a proprietary mobile application. The primary value proposition lies in the redemption mechanism, where accumulated points are converted into direct fare discounts (e.g., a 10% reduction on transit tickets).
 
-\<br>
+<br>
 
 To operationalize this service, the strategic blueprint mandates the deployment of advanced "smart" recycling receptacles across high-traffic transit stations and interchange hubs. These physical touchpoints integrate cutting-edge sensor technologies for the automated recognition, weighing, and logging of deposited materials. Ultimately, the project fulfills a dual strategic objective: aggressively promoting ecological awareness and actively driving the adoption of public transportation networks, thereby engineering a positive feedback loop of civic and environmental engagement.
 
-\<br>
+<br>
 
 ### Research Methodology and Discovery Phase
 
-\<br>
+<br>
 
 A robust, data-driven approach was fundamental to developing a holistic and functional service ecosystem. The research framework utilized a hybrid methodology, combining extensive secondary research (Desk Research) with deep qualitative user engagement (Participant Approaches) to map both the logistical constraints and the human-centric friction points of urban recycling.
 
@@ -50,11 +50,11 @@ A robust, data-driven approach was fundamental to developing a holistic and func
 
 **Qualitative Participant Approaches** To ensure the service architecture was deeply rooted in actual user needs, the team engaged directly with primary and secondary stakeholders. In-depth interviews were conducted with public transit personnel and corporate employees from prospective partner organizations, yielding vital operational insights for systemic implementation. Parallel to this, focus groups and interviews with prospective end-users highlighted anticipated friction points, behavioral hesitations, and functional expectations
 
-\<br>
+<br>
 
 ### Data Synthesis and Audience Segmentation
 
-\<br>
+<br>
 
 **Persona Development** To guide the platform's interaction design and feature prioritization, the team developed four distinct user personas representing the core demographic segments:
 
@@ -63,7 +63,7 @@ A robust, data-driven approach was fundamental to developing a holistic and func
 - **The Tech-Savvy Student (Age 22, IT Student):** Attracted to technological innovation and social responsibility, this user is engaged through gamification mechanics. She seeks interactive elements, tiered reward systems, and engaging milestones to maintain long-term retention.
 - **The Retail Proprietor (Age 39, Business Owner):** Representing a B2B/commercial edge case, this user seeks to minimize operational waste costs while boosting Corporate Social Responsibility (CSR) credentials. He requires a specialized dashboard capable of tracking high-volume recycling and managing enterprise-level point accrual.
 
-\<br>
+<br>
 
 **Service Blueprinting and Journey Mapping** The strategic flow of the service was visualized through comprehensive Journey Mapping, illustrating the end-to-end user lifecycle from initial platform awareness (via social media, radio, and targeted advertising) to account creation, physical interaction with the smart bins, point acquisition, and final discount redemption at transit kiosks.
 
@@ -79,11 +79,11 @@ A robust, data-driven approach was fundamental to developing a holistic and func
 - **Personal/Financial:** Directly reducing monthly transit expenses through real-time discount applications.
 - **Educational:** Offering integrated quizzes, ecological tips, and educational content to elevate the user's understanding of waste management and circular economy principles.
 
-\<br>
+<br>
 
 ### Ideation and Competitive Intelligence
 
-\<br>
+<br>
 
 The ideation phase was heavily informed by contextual environmental research and rigorous competitive intelligence. The team mapped the existing landscape of Greek waste management, focusing on municipal blue bins, the operations of Recycling Sorting Centers , and the mechanical sorting processes that bundle plastic, paper, glass, and aluminum for industrial repurposing. The proposed solution actively bridges these paradigms by combining the accessibility of public transit hubs with the tangible financial incentives of Reverse Vending, supported by an educational and highly engaging digital interface.
 
@@ -92,11 +92,11 @@ The ideation phase was heavily informed by contextual environmental research and
 - **Private Recycling Services:** Deliver premium, localized service for residential or corporate complexes, but often introduce subscription costs.
 - **Waste Management Educational Platforms:** Provide excellent guidance but lack physical infrastructure.
 
-\<br>
+<br>
 
 ### Prototyping and Technical Architecture
 
-\<br>
+<br>
 
 The prototyping phase translated theoretical frameworks into tangible, testable assets across three distinct pillars: Service Processes, Experiential Design, and Physical/Digital Objects.
 
@@ -110,32 +110,32 @@ The prototyping phase translated theoretical frameworks into tangible, testable 
 
 For backend infrastructure and administrative oversight, the team prototyped a management dashboard utilizing Google Sheets for initial database structuring, transitioning to Power BI and Tableau for advanced data visualization. This backend allows administrators to monitor bin capacity thresholds, analyze user transaction histories, and optimize collection routing.
 
-\<br>
+<br>
 
 ### Implementation Strategy
 
-\<br>
+<br>
 
 - **Usability Testing:** Initial trials involve placing prototype smart bins in simulated transit environments. Observers monitor how real users interact with the hardware, the speed of material recognition, and the seamlessness of the mobile app pairing process. Immediate feedback loops via user interviews will identify interface friction and hardware limitations.
 - **Pilot Testing (Beta Launch):** The service will be deployed in live, high-traffic transit nodes. This pilot phase will gather empirical data on bin utilization rates, the volumetric capacity of collected materials, and redemption frequencies. This live-environment stress test is critical for calibrating the system's operational viability before mass production.
 - **Phased Roll-out:** Full-scale implementation will prioritize major urban commercial centers and primary transit arteries. The expansion strategy dictates a gradual scaling from high-density metropolitan zones outward to suburban transit hubs, ensuring logistical networks are not overwhelmed.
 - **API Ecosystem Integration:** A cornerstone of the implementation is the backend integration with existing Public Transit Ticketing platforms. By developing a secure API bridge, users can seamlessly convert their recycling points into automated fare reductions directly at electronic turnstiles or digital ticketing kiosks, eliminating the need for manual voucher processing.
 
-\<br>
+<br>
 
 ### Strategic Partnerships
 
-\<br>
+<br>
 
 - **Waste Management & Processing:** The Hellenic Recovery Recycling Corporation will provide macro-level logistical infrastructure, while specialized facilities like GreenTech Recycling will handle the processing of high-grade plastics and metals.
 - **Transit Authorities:** Collaborations with urban bus networks, Metro systems (Athens and Thessaloniki), and long-distance travel providers (KTEL, maritime ferry operators) are critical for securing prime real estate for the smart bins and facilitating the ticket discount mechanism.
 - **Municipal & Corporate Alliances:** The Municipality of Athens serves as a crucial civic partner to ensure regulatory compliance and public trust. Corporate partnerships, such as Coca-Cola 3E's "Zero Waste Future" initiative, will provide vital funding and co-marketing opportunities. Furthermore, Terna Energy will process non-recyclable residual waste into energy, while Green Dot Cyprus contributes advanced sorting technologies. The Hellenic Composting Association (EEEK) will eventually assist in integrating compostable waste into the ecosystem, and ELTA Courier will provide sustainable, green logistics for material transport from remote collection nodes.
 
-\<br>
+<br>
 
 ### Training, Monitoring, and Optimization
 
-\<br>
+<br>
 
 **Stakeholder Training and Onboarding** Transit personnel and maintenance staff will undergo comprehensive training on hardware management, capacity monitoring, and routine sensor maintenance to prevent receptacle overflow and technical downtime. Simultaneously, end-users will be supported through intuitive in-app onboarding tutorials, localized instructional signage on the physical bins, and robust social media awareness campaigns to drive behavioral adoption
 
