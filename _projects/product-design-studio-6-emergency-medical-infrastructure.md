@@ -2,7 +2,7 @@
 title: Product Design Studio 6 "Emergency Medical Infrastructure"
 category: Academic
 gallery:
-  - /assets/uploads/wicut_1.jpg
+  - /assets/uploads/medomi.png
 description: |-
   MEDOmi – Deployable Pre-Hospital Triage Infrastructure for Wildfire Crisis Management
   Department of Product and Systems Design Engineering, University of the Aegean
